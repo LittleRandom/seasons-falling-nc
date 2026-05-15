@@ -1,3 +1,10 @@
+## [0.1.6](https://github.com/LittleRandom/seasons-falling-nc/compare/v0.1.5...v0.1.6) (2026-05-15)
+
+
+### Bug Fixes
+
+* update cosign-installer to v4.1.2, continue on error ([5acfdd5](https://github.com/LittleRandom/seasons-falling-nc/commit/5acfdd5b659c0370d84b43ba1d51fa4e251cfb6b))
+
 ## [0.1.5](https://github.com/LittleRandom/seasons-falling-nc/compare/v0.1.4...v0.1.5) (2026-05-15)
 
 
