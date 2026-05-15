@@ -1,5 +1,8 @@
 name: Docker Build
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 # Trigger on tags pushed by semantic-release (e.g. v0.1.1, v1.0.0)
 on:
   push:
