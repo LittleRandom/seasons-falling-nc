@@ -1,3 +1,10 @@
+# [0.2.0](https://github.com/LittleRandom/seasons-falling-nc/compare/v0.1.7...v0.2.0) (2026-05-15)
+
+
+### Features
+
+* prune old releases and Docker images, keep newest 10 ([302f9a9](https://github.com/LittleRandom/seasons-falling-nc/commit/302f9a99865c77b6d4ecc81ebc2f5978440aa61f))
+
 ## [0.1.7](https://github.com/LittleRandom/seasons-falling-nc/compare/v0.1.6...v0.1.7) (2026-05-15)
 
 
