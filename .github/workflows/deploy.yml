@@ -1,0 +1,27 @@
+# This workflow is disabled until the deployment target is ready.
+# When ready, remove the `on` trigger comment-out and set up the
+# compose path and credentials for your environment.
+
+name: Deploy
+
+# on:
+#   push:
+#     tags: ["v*.*.*"]
+
+jobs:
+  deploy:
+    name: Deploy to plainrandom.com
+    # runs-on: self-hosted
+    # if: false  # Disable until deployment target is ready
+    # steps:
+    #   - name: Deploy
+    #     run: |
+    #       echo ${{ secrets.CR_PAT }} | docker login ghcr.io -u USERNAME --password-stdin
+    #       docker compose -f /opt/stacks/plainrandom/compose.yaml pull
+    #       docker compose -f /opt/stacks/plainrandom/compose.yaml up --force-recreate --build -d
+    #       docker image prune -f
+    #       docker logout
+
+    steps:
+      - name: Disabled
+        run: echo "Deploy workflow is currently disabled. Uncomment the 'on' trigger and steps when ready."
