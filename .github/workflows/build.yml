@@ -66,19 +66,3 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      - name: Prune old Docker images (keep 10)
-        run: |
-          PACKAGE="${{ steps.version.outputs.image }}"
-          # Remove the org prefix to get just the package name for the API
-          PACKAGE_NAME="${PACKAGE#*/}"
-          ORG="${{ github.repository_owner }}"
-          echo "Pruning old versions for $ORG/$PACKAGE_NAME"
-          # List versions sorted by created_at (newest first), skip the first 10, delete the rest
-          VERSIONS=$(gh api "/orgs/$ORG/packages/container/$PACKAGE_NAME/versions" --paginate --jq 'sort_by(.created_at) | reverse | .[].id')
-          echo "$VERSIONS" | tail -n +11 | while read id; do
-            echo "Deleting old container version: $id"
-            gh api -X DELETE "/orgs/$ORG/packages/container/$PACKAGE_NAME/versions/$id" --silent 2>/dev/null || true
-          done
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-

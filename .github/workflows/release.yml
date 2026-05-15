@@ -57,15 +57,3 @@ jobs:
           gh workflow run build.yml -f version="$VERSION"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Prune old GitHub Releases (keep 10)
-        if: steps.semantic.outputs.released == 'true'
-        run: |
-          # List releases by published date (newest first), skip the first 10, delete the rest
-          gh release list --json tagName,publishedAt --jq 'sort_by(.publishedAt) | reverse | .[].tagName' --limit 100 | tail -n +11 | while read tag; do
-            echo "Deleting old release: $tag"
-            gh release delete "$tag" --yes 2>/dev/null || true
-            git push --delete origin "$tag" 2>/dev/null || true
-          done
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
