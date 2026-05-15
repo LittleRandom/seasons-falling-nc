@@ -36,6 +36,9 @@ jobs:
           fi
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
           echo "::notice::Building Docker image with tag: $VERSION"
+          # Lowercase the repo name for Docker compat
+          IMAGE="${GITHUB_REPOSITORY,,}"
+          echo "image=$IMAGE" >> "$GITHUB_OUTPUT"
 
       - name: Install cosign
         if: github.event_name != 'pull_request'
@@ -59,8 +62,8 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.version.outputs.version }}
-            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+            ${{ env.REGISTRY }}/${{ steps.version.outputs.image }}:${{ steps.version.outputs.version }}
+            ${{ env.REGISTRY }}/${{ steps.version.outputs.image }}:latest
           labels: |
             org.opencontainers.image.title=seasons-falling
             org.opencontainers.image.description=Seasons Falling website
@@ -72,5 +75,5 @@ jobs:
       - name: Sign the published Docker image
         env:
           DIGEST: ${{ steps.build-and-push.outputs.digest }}
-          TAGS: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.version.outputs.version }}
+          TAGS: ${{ env.REGISTRY }}/${{ steps.version.outputs.image }}:${{ steps.version.outputs.version }}
         run: echo "${TAGS}" | xargs -I {} cosign sign --yes {}@${DIGEST}
