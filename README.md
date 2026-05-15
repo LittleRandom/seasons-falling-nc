@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Seasons Falling
+
+A Next.js website deployed at [plainrandom.com/seasons](https://plainrandom.com/seasons).
 
 ## Getting Started
 

@@ -4,9 +4,11 @@ env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 # Trigger on tags pushed by semantic-release (e.g. v0.1.1, v1.0.0)
+# Also on workflow dispatch from release for first-tag bootstrapping
 on:
   push:
     tags: ["v*.*.*"]
+  workflow_dispatch:
 
 env:
   REGISTRY: ghcr.io
