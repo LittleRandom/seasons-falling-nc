@@ -1,3 +1,10 @@
+## [0.1.4](https://github.com/LittleRandom/seasons-falling-nc/compare/v0.1.3...v0.1.4) (2026-05-15)
+
+
+### Bug Fixes
+
+* chain build workflow from semantic-release via workflow_dispatch ([2652426](https://github.com/LittleRandom/seasons-falling-nc/commit/2652426e46fd0afb40bfb13c0869a6c6bc682264))
+
 ## [0.1.3](https://github.com/LittleRandom/seasons-falling-nc/compare/v0.1.2...v0.1.3) (2026-05-15)
 
 
