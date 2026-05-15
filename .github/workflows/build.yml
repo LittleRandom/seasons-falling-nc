@@ -1,16 +1,12 @@
 name: Docker Build
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
-# Trigger on tags pushed by semantic-release (e.g. v0.1.1, v1.0.0)
-# Also on workflow dispatch from release for first-tag bootstrapping
 on:
   push:
     tags: ["v*.*.*"]
   workflow_dispatch:
 
 env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
 
@@ -26,8 +22,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Use the git tag (e.g. v0.1.1) directly as the Docker tag
-      # Strip the leading 'v' so the image tag is clean (0.1.1)
       - name: Extract version
         id: version
         run: |
