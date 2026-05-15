@@ -1,3 +1,10 @@
+## [0.1.7](https://github.com/LittleRandom/seasons-falling-nc/compare/v0.1.6...v0.1.7) (2026-05-15)
+
+
+### Bug Fixes
+
+* remove cosign signing, build-and-push only ([95eca54](https://github.com/LittleRandom/seasons-falling-nc/commit/95eca541cfd6a8e84af0b0421009e1a77e481ab7))
+
 ## [0.1.6](https://github.com/LittleRandom/seasons-falling-nc/compare/v0.1.5...v0.1.6) (2026-05-15)
 
 
