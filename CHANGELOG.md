@@ -1,3 +1,10 @@
+## [0.2.1](https://github.com/LittleRandom/seasons-falling-nc/compare/v0.2.0...v0.2.1) (2026-05-15)
+
+
+### Reverts
+
+* Revert "feat: prune old releases and Docker images, keep newest 10" ([83d5f31](https://github.com/LittleRandom/seasons-falling-nc/commit/83d5f314ddf4ab316016d9a33ec4c754e8ac982d))
+
 # [0.2.0](https://github.com/LittleRandom/seasons-falling-nc/compare/v0.1.7...v0.2.0) (2026-05-15)
 
 
