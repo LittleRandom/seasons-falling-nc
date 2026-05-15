@@ -4,6 +4,10 @@ on:
   push:
     tags: ["v*.*.*"]
   workflow_dispatch:
+    inputs:
+      version:
+        description: "Semantic version tag (e.g. 1.2.3)"
+        required: true
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -25,7 +29,11 @@ jobs:
       - name: Extract version
         id: version
         run: |
-          VERSION="${GITHUB_REF_NAME#v}"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            VERSION="${{ inputs.version }}"
+          else
+            VERSION="${GITHUB_REF_NAME#v}"
+          fi
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
           echo "::notice::Building Docker image with tag: $VERSION"
 
