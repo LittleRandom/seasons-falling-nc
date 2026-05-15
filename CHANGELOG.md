@@ -1,3 +1,10 @@
+## [0.1.5](https://github.com/LittleRandom/seasons-falling-nc/compare/v0.1.4...v0.1.5) (2026-05-15)
+
+
+### Bug Fixes
+
+* lowercase repo name for Docker tag compatibility ([c1247b3](https://github.com/LittleRandom/seasons-falling-nc/commit/c1247b333926aaa6c72e2ea5a9e4a527ef69033f))
+
 ## [0.1.4](https://github.com/LittleRandom/seasons-falling-nc/compare/v0.1.3...v0.1.4) (2026-05-15)
 
 
